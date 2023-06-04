@@ -1,1 +1,1 @@
-# rock-paper-scissors
+A version of the famous game rock-paper-scissors implemented in javascript.
