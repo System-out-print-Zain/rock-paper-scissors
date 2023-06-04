@@ -1,7 +1,6 @@
-console.log("Hello Safari!");
-main();
-
 const ROUNDS = 3;
+
+main();
 
 function main()
 {
@@ -31,7 +30,7 @@ function play_game(t_rounds){
     /*Keep playing until one player wins a majority or all rounds have been played*/
     while (p_score < win_score && c_score < win_score && p_score + c_score < t_rounds)
     {
-        console.log("Round " + (p_score + c_score) + "/" + t_rounds);
+        console.log("Round " + (p_score + c_score + 1) + "/" + t_rounds);
         temp = play_round();
 
         if (temp == 1) // Player wins
@@ -56,4 +55,9 @@ function play_game(t_rounds){
     {
         console.log("It's a tie!")
     }
+}
+
+function play_round()
+{
+    return 1;
 }
