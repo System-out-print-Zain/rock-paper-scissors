@@ -106,7 +106,7 @@ function play_round()
     }
 
 }
-
+// Returns "r", "p", or  "s" randomly
 function computer_choice()
 {
     const ind = Math.floor(Math.random() * 3);
