@@ -57,7 +57,59 @@ function play_game(t_rounds){
     }
 }
 
+// Play a single round of rock paper scissors
 function play_round()
 {
-    return 1;
+    // The player selects either rock, paper, or scissors.
+    let p_choice;
+    do {
+        p_choice = prompt("Will you choose Rock, Paper, or Scissors (r,p,s)?");
+    }
+    while (p_choice != "r" && p_choice != "s" && p_choice != "p");
+
+    let c_choice = computer_choice();
+
+    if (p_choice == "s" && c_choice == "p")
+    {
+        console.log("S beats P; you win the round!");
+        return 1;
+    }
+    else if (p_choice == "r" && c_choice == "s")
+    {
+        console.log("R beats S; you win the round!");
+        return 1;
+    }
+    else if (p_choice == "p" && c_choice == "r")
+    {
+        console.log("P beats R; you win the round!");
+        return 1;
+    }
+    else if (p_choice == "s" && c_choice == "r")
+    {
+        console.log("R beats S; you lose the round ...");
+        return 0;
+    }
+    else if (p_choice == "r" && c_choice == "p")
+    {
+        console.log("P beats R; you lose the round ...");
+        return 0;
+    }
+    else if (p_choice == "p" && c_choice == "s")
+    {
+        console.log("S beats P; you lose the round ...");
+        return 0;
+    }
+    else
+    {
+        console.log("It's a tie");
+        return -1;
+    }
+
+}
+
+function computer_choice()
+{
+    const ind = Math.floor(Math.random() * 3);
+    let pos = ["r", "p", "s"];
+    return pos[ind];
 }
